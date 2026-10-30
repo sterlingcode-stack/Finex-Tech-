@@ -1,0 +1,51 @@
+
+/* =================================
+   FINEX - SAVE · PAY · GROW
+   Premium Fintech Interface
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080D0B;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+header {
+    padding: 25px 0;
+    border-bottom: 1px solid #24352D;
+}
+
+header h1 {
+    color: #10B981;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #A7B8AE;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+main {
+    margin-top: 45px;
+}
+
+main h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+main p {
+    color: #A7B8AE;
+    font-size: 16px;
+    line-height: 1.6;
+}
