@@ -571,4 +571,4 @@
 
         let description = '';
         if (type === 'electricity') description = 'Electricity — ' + provider + (meter ? ' (' + meter + ')' : '');
-        else if (type === 'cable') description = packageName + ' — ' + provide
+        else if (type === 'cable') description = packageName + ' — ' + provide 
