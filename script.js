@@ -1,4 +1,3 @@
-
 /* =====================================
    FINEX — SAVE · PAY · GROW
    Frontend Prototype JavaScript
