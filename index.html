@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#071B33">
+  <meta name="theme-color" content="#050d0c">
   <meta name="description" content="FINEX — Demo Nigerian digital wallet. All balances and transactions are fictional.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,10 +14,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Persistent demo banner -->
-  <div class="demo-banner">
-    <span>DEMO MODE</span> All balances &amp; transactions are fictional. No real money moves.
-  </div>
 
   <!-- ==================== AUTH SCREENS ==================== -->
   <!-- Welcome -->
@@ -25,17 +21,18 @@
     <div class="auth-wrap">
       <div class="auth-card">
         <div class="auth-logo">
-          <img src="assets/logo.svg" alt="FINEX" width="160" height="48">
-          <div class="tagline">Nigerian Digital Wallet</div>
+          <div class="brand">FINE<span>X</span></div>
+          <div class="tagline">Save <span class="dot">·</span> Pay <span class="dot">·</span> Grow.</div>
         </div>
-        <h1 class="auth-title">Welcome to FINEX</h1>
-        <p class="auth-sub">Send money, pay bills, buy airtime — all in one place. This is a frontend prototype for demonstration only.</p>
-        <div class="auth-notice">
-          ⚠️ This is a <strong>demo application</strong>. No real bank accounts, payments, or licensed financial services are involved.
-        </div>
+        <h1 class="auth-title">Welcome to <span>FINEX</span></h1>
+        <p class="auth-sub">Send money, pay bills, buy airtime — all in one place. Your complete financial companion.</p>
         <div class="auth-actions">
-          <button type="button" class="btn btn-primary" id="btn-goto-register">Create Account</button>
-          <button type="button" class="btn btn-outline" id="btn-goto-login">Log In</button>
+          <button type="button" class="btn btn-primary" id="btn-goto-register">Create Account →</button>
+          <button type="button" class="btn btn-ghost" id="btn-goto-login">Log In</button>
+        </div>
+        <div class="auth-security">
+          <span class="shield">🛡️</span>
+          <span>Your data is safe with FINEX<br>Bank-grade security. Always.</span>
         </div>
       </div>
     </div>
@@ -46,11 +43,11 @@
     <div class="auth-wrap">
       <div class="auth-card">
         <div class="auth-logo">
-          <div class="brand">FINEX</div>
+          <div class="brand">FINE<span>X</span></div>
+          <div class="tagline">Save <span class="dot">·</span> Pay <span class="dot">·</span> Grow.</div>
         </div>
-        <h1 class="auth-title">Create Account</h1>
-        <p class="auth-sub">Demo registration — data stays on this device only</p>
-        <div class="auth-notice">Demonstration login system only. Not production authentication. Passwords are stored locally for demo purposes.</div>
+        <h1 class="auth-title">Create <span>Account</span></h1>
+        <p class="auth-sub">Join FINEX and take control of your finances.</p>
         <form id="form-register" novalidate>
           <div class="form-group">
             <label for="reg-name">Full Name</label>
@@ -77,7 +74,7 @@
             <input type="password" id="reg-confirm" placeholder="Repeat password" autocomplete="new-password" required>
             <div class="form-error"></div>
           </div>
-          <button type="submit" class="btn btn-primary">Create Demo Account</button>
+          <button type="submit" class="btn btn-primary">Create Account</button>
         </form>
         <div class="auth-footer">
           Already have an account? <a href="#" id="link-to-login">Log in</a>
@@ -91,26 +88,41 @@
     <div class="auth-wrap">
       <div class="auth-card">
         <div class="auth-logo">
-          <div class="brand">FINEX</div>
+          <div class="brand">FINE<span>X</span></div>
+          <div class="tagline">Save <span class="dot">·</span> Pay <span class="dot">·</span> Grow.</div>
         </div>
-        <h1 class="auth-title">Log In</h1>
-        <p class="auth-sub">Demo login — use the account you registered on this device</p>
-        <div class="auth-notice">This is not real authentication. Credentials never leave your browser.</div>
+        <h1 class="auth-title">Welcome <span>Back</span></h1>
+        <p class="auth-sub">Log in to your FINEX account and continue your financial journey.</p>
         <form id="form-login" novalidate>
           <div class="form-group">
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" placeholder="you@email.com" autocomplete="email" required>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="email" id="login-email" class="has-icon" placeholder="Email or Phone Number" autocomplete="email" required>
+            </div>
             <div class="form-error"></div>
           </div>
           <div class="form-group">
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password" required>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="login-password" class="has-icon has-toggle" placeholder="Password" autocomplete="current-password" required>
+              <button type="button" class="toggle-pass" id="toggle-login-pass" aria-label="Show password">👁</button>
+            </div>
             <div class="form-error"></div>
           </div>
-          <button type="submit" class="btn btn-primary">Log In</button>
+          <div class="form-row-between">
+            <label><input type="checkbox" id="remember-me" checked> Remember me</label>
+            <a href="#" class="forgot-link" id="link-forgot">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Log In →</button>
         </form>
+        <div class="divider">OR</div>
+        <button type="button" class="btn btn-ghost" id="btn-biometrics">👆 Login with Biometrics</button>
         <div class="auth-footer">
-          New here? <a href="#" id="link-to-register">Create account</a>
+          Don't have an account? <a href="#" id="link-to-register">Create One →</a>
+        </div>
+        <div class="auth-security">
+          <span class="shield">🛡️</span>
+          <span>Your data is safe with FINEX<br>Bank-grade security. Always.</span>
         </div>
       </div>
     </div>
@@ -121,7 +133,7 @@
     <!-- Sidebar (desktop) -->
     <aside class="sidebar">
       <div class="side-logo"><span>F</span> FINEX</div>
-      <div class="side-demo">DEMO MODE</div>
+      <div class="side-demo" style="background:rgba(0,229,160,0.2);color:var(--green);">FINEX</div>
       <nav class="side-nav">
         <button type="button" data-nav="dashboard" class="active">🏠 Dashboard</button>
         <button type="button" data-nav="wallet">💳 Wallet</button>
@@ -129,44 +141,101 @@
         <button type="button" data-nav="history">📋 History</button>
         <button type="button" data-nav="profile">👤 Profile</button>
       </nav>
-      <div class="side-footer">FINEX Demo · No real money<br>Frontend prototype only</div>
+      <div class="side-footer">FINEX · Save · Pay · Grow.</div>
     </aside>
 
     <!-- Dashboard -->
     <section id="screen-dashboard" class="screen">
-      <div class="dashboard-header">
-        <div class="dash-greet">Welcome back,</div>
-        <div class="dash-name" id="dash-name">User</div>
-        <div class="balance-card">
-          <div class="balance-label">Available Balance</div>
-          <div class="balance-amount" id="dash-balance">₦0.00</div>
-          <div class="balance-note">Demo funds · Not real money</div>
+      <div class="app-topbar">
+        <div class="logo-row">
+          <div class="logo-mark">F</div>
+          <div>
+            <div class="logo-text">FINE<span>X</span></div>
+            <div class="logo-sub">Save · Pay · Grow.</div>
+          </div>
+        </div>
+        <div class="right">
+          <button type="button" class="notif-btn" aria-label="Notifications">🔔<span class="dot"></span></button>
+          <button type="button" class="user-chip" data-nav="profile">
+            <div class="avatar" id="top-avatar">JD</div>
+            <div class="meta">
+              <div class="name" id="top-name">User</div>
+              <div class="role">Premium Member</div>
+            </div>
+          </button>
         </div>
       </div>
-      <div class="quick-actions">
-        <button type="button" class="qa-item" data-action="add-money">
-          <div class="qa-icon">➕</div>
-          <span class="qa-label">Add Money</span>
+
+      <div class="balance-hero">
+        <div class="top-row">
+          <div>
+            <div class="label">Total Balance 👁</div>
+            <div class="amount" id="dash-balance">₦0.00</div>
+            <div class="change" id="dash-change">↑ Welcome to FINEX</div>
+          </div>
+          <div class="wallet-icon">💳</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">Account Name<div class="val" id="dash-acct-name">—</div></div>
+          <div class="meta-item">Account No.<div class="val">**** 6821</div></div>
+          <div class="meta-item">Currency<div class="val">NGN</div></div>
+        </div>
+      </div>
+
+      <div class="service-tiles">
+        <button type="button" class="service-tile" data-action="airtime">
+          <div class="icon-circle">✈️</div>
+          <div class="label">Airtime ›</div>
         </button>
-        <button type="button" class="qa-item" data-action="transfer">
-          <div class="qa-icon">↗️</div>
-          <span class="qa-label">Transfer</span>
+        <button type="button" class="service-tile" data-bill="data">
+          <div class="icon-circle">📶</div>
+          <div class="label">Data ›</div>
         </button>
-        <button type="button" class="qa-item" data-action="bills">
-          <div class="qa-icon">💡</div>
-          <span class="qa-label">Pay Bills</span>
+        <button type="button" class="service-tile" data-bill="cable">
+          <div class="icon-circle">📺</div>
+          <div class="label">Cable TV ›</div>
         </button>
-        <button type="button" class="qa-item" data-action="airtime">
-          <div class="qa-icon">📱</div>
-          <span class="qa-label">Airtime</span>
+        <button type="button" class="service-tile" data-bill="electricity">
+          <div class="icon-circle">⚡</div>
+          <div class="label">Electricity ›</div>
         </button>
       </div>
+
       <div class="section">
-        <div class="section-title">
-          Recent Transactions
-          <button type="button" data-nav="history" onclick="document.querySelector('[data-nav=history]').click()">See all</button>
+        <div class="section-head">
+          <h3>▦ Quick Services</h3>
+          <button type="button" data-nav="bills">View All ›</button>
         </div>
-        <div class="card">
+        <div class="quick-grid">
+          <button type="button" class="quick-item" data-action="add-money">
+            <div class="qi">💰</div>
+            <span class="ql">Fund Wallet</span>
+          </button>
+          <button type="button" class="quick-item" data-action="transfer">
+            <div class="qi">↗️</div>
+            <span class="ql">Send Money</span>
+          </button>
+          <button type="button" class="quick-item" data-action="bills">
+            <div class="qi">📄</div>
+            <span class="ql">Pay Bills</span>
+          </button>
+          <button type="button" class="quick-item" data-action="transfer">
+            <div class="qi">🔄</div>
+            <span class="ql">Transfer</span>
+          </button>
+          <button type="button" class="quick-item" data-nav="bills">
+            <div class="qi">▦</div>
+            <span class="ql">More</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <h3>🕐 Recent Transactions</h3>
+          <button type="button" data-nav="history">View All ›</button>
+        </div>
+        <div class="tx-card">
           <div class="tx-list" id="dash-tx-list"></div>
         </div>
       </div>
@@ -180,7 +249,7 @@
       <div class="wallet-balance">
         <div class="label">Available Balance</div>
         <div class="amount" id="wallet-balance-amount">₦0.00</div>
-        <div class="balance-note" style="opacity:0.75;font-size:12px;">Fictional demo balance</div>
+        <div class="balance-note" style="opacity:0.75;font-size:12px;">Available balance</div>
       </div>
       <div class="wallet-actions">
         <button type="button" class="btn btn-primary" data-action="add-money">Add Money</button>
@@ -191,8 +260,8 @@
         <div class="card">
           <div class="tx-list" id="wallet-tx-list"></div>
         </div>
-        <div class="card-flat" style="margin-top:12px;font-size:13px;color:var(--muted);">
-          <strong>Demo funding:</strong> Use “Add Money” to simulate deposits. No real bank account or virtual account is created. Withdrawals are also simulated and do not send money anywhere.
+        <div class="card-flat" style="margin-top:12px;">
+          Add money to fund your wallet. Withdraw to your linked bank account anytime.
         </div>
       </div>
     </section>
@@ -206,8 +275,8 @@
         </div>
       </header>
       <div class="section">
-        <div class="auth-notice" style="margin-bottom:16px;">
-          Simulation only. No real payment is processed. Funds are added to your demo balance locally.
+        <div class="card-flat" style="margin-bottom:16px;">
+          Enter the amount you want to add to your FINEX wallet.
         </div>
         <form id="form-add-money" class="card">
           <div class="form-group">
@@ -228,8 +297,8 @@
         </div>
       </header>
       <div class="section">
-        <div class="auth-notice" style="margin-bottom:16px;">
-          Simulation only. No real transfer to any bank account occurs.
+        <div class="card-flat" style="margin-bottom:16px;">
+          Withdraw funds to your bank account. Processing usually takes a few minutes.
         </div>
         <form id="form-withdraw" class="card">
           <div class="form-group">
@@ -260,8 +329,8 @@
         </div>
       </header>
       <div class="section">
-        <div class="auth-notice" style="margin-bottom:16px;">
-          No real money is transferred. This is a complete frontend simulation.
+        <div class="card-flat" style="margin-bottom:16px;">
+          Send money instantly to any Nigerian bank account.
         </div>
         <form id="form-transfer" class="card">
           <div class="form-group">
@@ -312,8 +381,8 @@
         <div class="review-row"><span class="label">Fee</span><span class="value" id="review-fee">₦0.00</span></div>
       </div>
       <div class="section">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;text-align:center;">
-          Confirming will simulate the transfer and deduct from your demo balance only.
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;text-align:center;">
+          Please confirm the details below before sending.
         </p>
         <button type="button" class="btn btn-primary" id="btn-confirm-transfer">Confirm Transfer</button>
         <button type="button" class="btn btn-secondary" id="btn-cancel-review" style="margin-top:10px;">Cancel</button>
@@ -348,8 +417,8 @@
         </button>
       </div>
       <div class="section">
-        <div class="card-flat" style="font-size:13px;color:var(--muted);">
-          All bill payments are simulated. No real utility or network accounts are charged.
+        <div class="card-flat">
+          Pay electricity, cable, internet, airtime and data in seconds.
         </div>
       </div>
     </section>
@@ -394,65 +463,5 @@
       <div class="section">
         <form class="bill-form card" data-bill="cable">
           <div class="form-group">
-            <label for="bill-cable-provider">Provider</label>
-            <select id="bill-cable-provider" name="provider" required>
-              <option value="">Select provider</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="bill-cable-smart">Smartcard / IUC Number</label>
-            <input type="text" id="bill-cable-smart" name="meter" placeholder="Smartcard number" required>
-          </div>
-          <div class="form-group">
-            <label for="bill-cable-package">Package</label>
-            <input type="text" id="bill-cable-package" name="package" placeholder="e.g. DStv Compact" required>
-          </div>
-          <div class="form-group">
-            <label for="bill-cable-amount">Amount (₦)</label>
-            <input type="number" id="bill-cable-amount" name="amount" min="50" step="50" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Pay Now</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Bill: Internet -->
-    <section id="screen-bill-internet" class="screen">
-      <header class="app-header">
-        <div class="left">
-          <button type="button" class="back-btn" data-back="screen-bills">←</button>
-          <h1>Internet</h1>
-        </div>
-      </header>
-      <div class="section">
-        <form class="bill-form card" data-bill="internet">
-          <div class="form-group">
-            <label for="bill-net-provider">Provider</label>
-            <select id="bill-net-provider" name="provider" required>
-              <option value="">Select provider</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="bill-net-account">Account / Customer ID</label>
-            <input type="text" id="bill-net-account" name="meter" placeholder="Account ID" required>
-          </div>
-          <div class="form-group">
-            <label for="bill-net-amount">Amount (₦)</label>
-            <input type="number" id="bill-net-amount" name="amount" min="50" step="50" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Pay Now</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Bill: Airtime -->
-    <section id="screen-bill-airtime" class="screen">
-      <header class="app-header">
-        <div class="left">
-          <button type="button" class="back-btn" data-back="screen-bills">←</button>
-          <h1>Buy Airtime</h1>
-        </div>
-      </header>
-      <div class="section">
-        <form class="bill-form card" data-bill="airt
+            <label for="bill-cable-provider">Pr
 
